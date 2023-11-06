@@ -69,13 +69,6 @@ public class CoppersmithWinogradTest {
             System.out.println("Coppersmith-Winograd runtime (nanoseconds): " + (endTime - startTime));
             System.out.println("Iterative runtime (nanoseconds): " + (refEndTime - refStartTime));
             System.out.println("Result is accurate: " + isEqual);
-            /* System.out.println("Matrix A:");
-            printMatrix(A);
-            System.out.println("Matrix B:");
-            printMatrix(B);
-            System.out.println("Result Matrix:");
-            printMatrix(result);
-            System.out.println(); */
         }
     }
 }
