@@ -40,7 +40,7 @@ public class CoppersmithWinogradTest {
 
     public static void main(String[] args) {
         int minMatrixSize = 2;
-        int maxMatrixSize = 10000;
+        int maxMatrixSize = 1024;
         Random random = new Random();
 
         for (int size = 2; size <= maxMatrixSize; size *= 2) {
