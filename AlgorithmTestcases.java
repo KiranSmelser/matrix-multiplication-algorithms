@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class CoppersmithWinogradTest {
+public class AlgorithmTestcases {
     // Function to perform matrix multiplication
     public static int[][] matrixMultiplication(int[][] A, int[][] B) {
         int n = A.length;
@@ -55,20 +55,22 @@ public class CoppersmithWinogradTest {
                 }
             }
 
-            long startTime = System.nanoTime();
-            int[][] result = CoppersmithWinograd.matrixMultiply(A, B);
-            long endTime = System.nanoTime();
+            long copperStartTime = System.nanoTime();
+            int[][] copperResult = CoppersmithWinograd.matrixMultiply(A, B);
+            long copperEndTime = System.nanoTime();
+
+            long strassenSquareStartTime = System.nanoTime();
+            int[][] strassenSquareResult = CoppersmithWinograd.matrixMultiply(A, B);
+            long strassenSquareEndTime = System.nanoTime();
 
             // Check the accuracy of the result
-            long refStartTime = System.nanoTime();
             int[][] referenceResult = matrixMultiplication(A, B); // Iterative matrix multiplication for comparison
-            long refEndTime = System.nanoTime();
-            boolean isEqual = checkEquality(result, referenceResult);
+            boolean isEqual = checkEquality(copperResult, referenceResult) && checkEquality(strassenSquareResult, referenceResult);
 
             System.out.println("Matrix size: " + size + "x" + size);
-            System.out.println("Coppersmith-Winograd runtime (nanoseconds): " + (endTime - startTime));
-            System.out.println("Iterative runtime (nanoseconds): " + (refEndTime - refStartTime));
-            System.out.println("Result is accurate: " + isEqual);
+            System.out.println("Coppersmith-Winograd runtime (nanoseconds): " + (copperEndTime - copperStartTime));
+            System.out.println("Strassen for square matrices runtime (nanoseconds): " + (strassenSquareEndTime - strassenSquareStartTime));
+            System.out.println("Results are accurate: " + isEqual);
         }
     }
 }
