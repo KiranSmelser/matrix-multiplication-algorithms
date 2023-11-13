@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class AlgorithmTestcases {
+public class SquareTestcases {
     // Function to perform matrix multiplication
     public static int[][] matrixMultiplication(int[][] A, int[][] B) {
         int n = A.length;
