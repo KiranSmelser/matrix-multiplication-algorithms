@@ -1,5 +1,6 @@
 import java.util.Arrays;
 public class Non_Square {
+    private static final int threshold = 2;
     public static int[][] multiplyStrassenNonSquare(int[][] a, int[][] b) {
         // Check if the matrices are compatible for multiplication
         if (a[0].length != b.length) {
@@ -25,7 +26,10 @@ public class Non_Square {
         }
 
         // Recursive divide-and-conquer matrix multiplication
-            // Divide matrices into submatrices
+        if (size <= threshold) {  // Use a threshold for switching to a more efficient algorithm
+            return multiplyStandard(apadded, bpadded);
+        } else {
+            // Divide matrices
             int[][] a11 = submatrix(apadded, 0, 0, size / 2, size / 2);
             int[][] A12 = submatrix(apadded, 0, size / 2, size / 2, size);
             int[][] A21 = submatrix(apadded, size / 2, 0, size, size / 2);
@@ -53,21 +57,43 @@ public class Non_Square {
 
             // Extract the result from the padded matrix
             return concatenate(concatenate(C11, C12), concatenate(C21, C22));
+        }
     }
+    private static int[][] multiplyStandard(int[][] A, int[][] B) {
+        int m = A.length;
+        int n = A[0].length;
+        int p = B[0].length;
+        int[][] result = new int[m][p];
 
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < p; j++) {
+                for (int k = 0; k < n; k++) {
+                    result[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+
+        return result;
+    }
     private static int[][] submatrix(int[][] matrix, int start1, int start2, int end1, int end2) {
-        int row = end1 - start1;
-        int col = end2 - start2;
+        int row=end1-start1;
+        int col=end2-start2;
         int[][] result = new int[row][col];
 
-        for (int i = 0; i < row; i++) {
-            result[i] = Arrays.copyOfRange(matrix[start1 + i], start2, end1);
+        for (int i=0;i<row;i++) {
+            result[i] = Arrays.copyOfRange(matrix[start1+i],start2,end1);
         }
 
         return result;
     }
 
     private static int[][] add(int[][] a, int[][] b) {
+        if(a.length==0) {
+            return b;
+        }
+        if(b.length==0) {
+            return a;
+        }
         int row = a.length;
         int col = a[0].length;
         int[][] result = new int[row][col];
