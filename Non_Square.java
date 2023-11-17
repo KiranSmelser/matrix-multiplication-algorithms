@@ -14,6 +14,13 @@ public class Non_Square {
         int size=(int) Math.pow(2, Math.ceil(Math.log(max) / Math.log(2)));
         int[][] apadded=new int[size][size];
         int[][] bpadded=new int[size][size];
+        float sample=Math.log(size)/Math.log(2)
+        while(sample!=(int)sample) {
+            size++;
+            apadded=new int[size][size];
+            bpadded=new int[size][size];
+        }
+
         for (int i=0; i<al; i++) {
             apadded[i]=Arrays.copyOf(a[i],size);
         }
