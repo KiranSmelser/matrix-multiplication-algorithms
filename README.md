@@ -4,7 +4,7 @@
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
-* [Setup](#setup)
+* [Files](#files)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
@@ -21,8 +21,8 @@ Implements and tests the Strassen Matrix Multiplication Algorithm for square mat
 - Java
 
 
-## Setup
-
+## Files
+StrassensMatrixMultiplication.java contains the 
 
 
 ## Usage
