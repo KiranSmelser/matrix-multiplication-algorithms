@@ -7,10 +7,8 @@
 * [Files](#files)
 * [Usage](#usage)
 * [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
-<!-- * [License](#license) -->
 
 
 ## General Information
@@ -22,22 +20,19 @@ Implements and tests the Strassen Matrix Multiplication Algorithm for square mat
 
 
 ## Files
-StrassensMatrixMultiplication.java contains the 
+- StrassensMatrixMultiplication.java contains the Java class that implements Strassen's Matrix Multiplication Algorithm for square matrices.
+- Non_Square.java contains the Java class that implements Strassen's Matrix Multiplication Algorithm for non-square matrices.
+- CoppersmithWinograd.java contains the Java class that implements Coppersmith-Winograd's Matrix Multiplication Algorithm for square matrices.
+- SquareTestcases.java is the Java file for testing both the Strassen Matrix Multiplication Algorithm and the Coppersmith-Winograd Matrix Multiplication Algorithm for square matrices.
+- NonSquareTestcases.java is the Java file for testing the Strassen Matrix Multiplication Algorithm for non-square matrices.
 
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+Run both SquareTestcases.java and NonSquareTestcases.java to test all three of the matrix multiplication algorithms on various-size matrices containing random integers. Both test files can be altered in order to extend the scope of matrix sizes being tested. 
 
 
 ## Project Status
 Project is: _complete_
-
-
-## Room for Improvement
-
 
 
 ## Acknowledgements
