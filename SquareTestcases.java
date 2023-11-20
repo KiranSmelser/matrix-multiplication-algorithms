@@ -31,13 +31,6 @@ public class SquareTestcases {
         }
         return true;
     }
-
-    // Function to print a 2D array
-    public static void printMatrix(int[][] matrix) {
-        for (int[] row : matrix) {
-            System.out.print(Arrays.toString(row));
-        }
-    }
     
     public static String arrayToStringSideBySide(int[][] array1, int[][] array2, int[][] array3) {
         StringBuilder result = new StringBuilder();
