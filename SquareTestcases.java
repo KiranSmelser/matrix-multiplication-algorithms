@@ -31,16 +31,23 @@ public class SquareTestcases {
         }
         return true;
     }
-    
+
+    // Function to print out the matrix results from the different algorithms side-by-side
     public static String arrayToStringSideBySide(int[][] array1, int[][] array2, int[][] array3) {
         StringBuilder result = new StringBuilder();
-
+	    
+	// Get the max length of the arrays
         int maxLength = Math.max(Math.max(array1.length, array2.length), array3.length);
 
+	// Print each matrix side-by-side
         for (int i = -1; i < maxLength; i++) {
+	    // Print first array
             if (i < array1.length) {
+		// Print indentifier above matrix
             	if (i == -1) {
             		result.append("Iterative:");
+
+			// Check if the size of the printed first row is less than "Iterative" for formatting
             		if (arrayRowToString(array1[0]).length() > 10) {
 	            		for (int j = 0; j < arrayRowToString(array1[0]).length() - 10; j++)
 	            			result.append(" ");
@@ -50,15 +57,19 @@ public class SquareTestcases {
             			result.append("\t");
             	}
             	else {
+			// Print row
             		result.append(arrayRowToString(array1[i]));
             		result.append("\t\t");
             	}            		
             }
-            
-
+		
+	    // Print second array
             if (i < array2.length) {
+		// Print indentifier above matrix
             	if (i == -1) {
             		result.append("Strassen's:");
+
+			// Check if the size of the printed first row is less than "Iterative" for formatting
             		if (arrayRowToString(array1[0]).length() > 10) {
 	            		for (int j = 0; j < arrayRowToString(array1[0]).length() -11; j++)
 	            			result.append(" ");
@@ -68,33 +79,43 @@ public class SquareTestcases {
             			result.append("\t");
             	}
             	else {
+			// Print row
             		result.append(arrayRowToString(array2[i]));
             		result.append("\t\t");
             	}
             }
 
             if (i < array3.length) {
+		// Print indentifier above matrix
             	if (i == -1) {
             		result.append("Winograd's:");
             	}
-            	else
+            	else {
+			// Print row
             		result.append(arrayRowToString(array3[i]));
+		}
             }
             result.append("\n");
         }
         return result.toString();
     }
     
-    
+    // Function to print out the input matrices side-by-side
     public static String arrayToStringSideBySide(int[][] array1, int[][] array2) {
         StringBuilder result = new StringBuilder();
 
+	// Get the max length of the arrays
         int maxLength = Math.max(array1.length, array2.length);
 
+	// Print each matrix side-by-side
         for (int i = -1; i < maxLength; i++) {
+	    // Print first array
             if (i < array1.length) {
+		// Print indentifier above matrix
             	if (i == -1) {
             		result.append("Matrix A:");
+			
+			// Check if the size of the printed first row is less than "Iterative" for formatting
             		if (arrayRowToString(array1[0]).length() > 10) {
 	            		for (int j = 0; j < arrayRowToString(array1[0]).length() - 9; j++)
 	            			result.append(" ");
@@ -104,17 +125,22 @@ public class SquareTestcases {
             			result.append("\t");
             	}
             	else {
+			// Print row
             		result.append(arrayRowToString(array1[i]));
             		result.append("\t\t");
             	}            		
             }
 
+            // Print second array
             if (i < array2.length) {
+		// Print indentifier above matrix
             	if (i == -1) {
             		result.append("Matrix B:");
             	}
-            	else
+            	else {
+			// Print row
             		result.append(arrayRowToString(array2[i]));
+		}
             }
             result.append("\n");
         }
