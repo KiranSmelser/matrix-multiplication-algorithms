@@ -69,7 +69,7 @@ public class SquareTestcases {
             	if (i == -1) {
             		result.append("Strassen's:");
 
-			// Check if the size of the printed first row is less than "Iterative" for formatting
+			// Check if the size of the printed first row is less than "Strassen's:" for formatting
             		if (arrayRowToString(array1[0]).length() > 10) {
 	            		for (int j = 0; j < arrayRowToString(array1[0]).length() -11; j++)
 	            			result.append(" ");
@@ -115,7 +115,7 @@ public class SquareTestcases {
             	if (i == -1) {
             		result.append("Matrix A:");
 			
-			// Check if the size of the printed first row is less than "Iterative" for formatting
+			// Check if the size of the printed first row is less than "Matrix A:" for formatting
             		if (arrayRowToString(array1[0]).length() > 10) {
 	            		for (int j = 0; j < arrayRowToString(array1[0]).length() - 9; j++)
 	            			result.append(" ");
